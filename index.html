@@ -3,9 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título de la página</title>
+    <title>Mi Repositorio en GitHub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: #4a90e2;
+            color: #fff;
+            width: 100%;
+            text-align: center;
+            padding: 2em 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        main {
+            padding: 2em;
+            max-width: 800px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #4a90e2;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #357abd;
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <h1>Bienvenidos a Mi Repositorio</h1>
+        <p>Este proyecto incluye contenido interesante sobre mi repositorio en GitHub.</p>
+    </header>
+
+    <main>
+        <section id="repo-info">
+            <h2>Acerca del Repositorio</h2>
+            <p>Este es el lugar para conocer más sobre el repositorio y las tecnologías utilizadas.</p>
+        </section>
+
+        <button id="loginButton">Iniciar Sesión para Editar</button>
+    </main>
+
+    <script>
+        document.getElementById("loginButton").addEventListener("click", function() {
+            const username = prompt("Ingresa tu usuario:");
+            const password = prompt("Ingresa tu contraseña:");
+
+            if (username === "usuario" && password === "clave") {
+                const newContent = prompt("Introduce el nuevo contenido para la sección del repositorio:");
+                document.getElementById("repo-info").querySelector("p").textContent = newContent;
+                alert("Contenido actualizado exitosamente.");
+            } else {
+                alert("Credenciales incorrectas.");
+            }
+        });
+    </script>
 </body>
 </html>
