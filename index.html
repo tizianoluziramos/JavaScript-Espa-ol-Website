@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript and TypeScript in English</title>
+    <title>JavaScript and TypeScript</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -75,16 +75,16 @@
 
 <body>
     <header>
-        <h1>JavaScript and TypeScript in English</h1>
-        <button onclick="switchLanguage()">Switch to Spanish</button>
+        <h1 id="header-title">JavaScript and TypeScript in English</h1>
+        <button onclick="switchLanguage()" id="language-button">Switch to Spanish</button>
     </header>
     <main>
         <section>
-            <h2>Installation Instructions</h2>
+            <h2 id="installation-title">Installation Instructions</h2>
             <ul>
-                <li>Unzip the ZIP file.</li>
-                <li>Place all content in your project folder.</li>
-                <li>Add the following line to your code:</li>
+                <li id="step1">Unzip the ZIP file.</li>
+                <li id="step2">Place all content in your project folder.</li>
+                <li id="step3">Add the following line to your code:</li>
                 <ul>
                     <li><b>TypeScript:</b> <code>import * as english from './import.ts';</code></li>
                     <li><b>JavaScript:</b> <code>import * as english from './import.js';</code></li>
@@ -92,16 +92,16 @@
             </ul>
         </section>
         <section>
-            <h2>Usage</h2>
-            <p>To use the project's functionalities, write:</p>
+            <h2 id="usage-title">Usage</h2>
+            <p id="usage-text">To use the project's functionalities, write:</p>
             <code>english.*(the command you want to use)</code>
         </section>
         <section>
-            <h2>License</h2>
-            <p>The project is under an open-source license.</p>
+            <h2 id="license-title">License</h2>
+            <p id="license-text">The project is under an open-source license.</p>
         </section>
         <section>
-            <h2>Recent Changes</h2>
+            <h2 id="changes-title">Recent Changes</h2>
             <h3>[1.1.3-PreRelease]</h3>
             <ul>
                 <li>The code has been reconfigured to be compatible with JavaScript, adding interfaces and appropriate types for the functions.</li>
@@ -134,7 +134,7 @@
             </ul>
         </section>
         <section>
-            <h2>Main Features</h2>
+            <h2 id="features-title">Main Features</h2>
             <ul>
                 <li>Array utilities: <code>map</code>, <code>filter</code>, <code>reverseArray</code>, and more.</li>
                 <li>Validation functions: <code>isAnagram</code>, <code>isPalindrome</code>, <code>validateCard</code>.</li>
@@ -144,7 +144,7 @@
             </ul>
         </section>
         <section>
-            <h2>Upcoming Updates</h2>
+            <h2 id="updates-title">Upcoming Updates</h2>
             <ul>
                 <li>Complete the <code>autoFixCode.ts</code> file.</li>
                 <li>Optimization of existing functions.</li>
@@ -153,62 +153,74 @@
         </section>
     </main>
     <footer>
-        <p>© 2024 - JavaScript and TypeScript in English. Open Source Project.</p>
+        <p id="footer-text">© 2024 - JavaScript and TypeScript in English. Open Source Project.</p>
     </footer>
 
     <script>
+        let language = 'en';
+
         function switchLanguage() {
-            const elementsToTranslate = {
-                "header h1": {
-                    "en": "JavaScript and TypeScript in English",
-                    "es": "JavaScript y TypeScript en Español"
-                },
-                "main section h2": {
-                    "en": {
-                        "Installation Instructions": "Installation Instructions",
-                        "Usage": "Usage",
-                        "License": "License",
-                        "Recent Changes": "Recent Changes",
-                        "Main Features": "Main Features",
-                        "Upcoming Updates": "Upcoming Updates"
-                    },
-                    "es": {
-                        "Installation Instructions": "Instrucciones de Instalación",
-                        "Usage": "Uso",
-                        "License": "Licencia",
-                        "Recent Changes": "Cambios Recientes",
-                        "Main Features": "Funciones Principales",
-                        "Upcoming Updates": "Próximas Actualizaciones"
-                    }
-                },
-                "footer p": {
-                    "en": "© 2024 - JavaScript and TypeScript in English. Open Source Project.",
-                    "es": "© 2024 - JavaScript y TypeScript en Español. Proyecto Open Source."
-                },
-                "button": {
-                    "en": "Switch to Spanish",
-                    "es": "Cambiar a Español"
-                }
-            };
+            if (language === 'en') {
+                // Switch to Spanish
+                document.getElementById("header-title").textContent = "JavaScript y TypeScript en Español";
+                document.getElementById("installation-title").textContent = "Instrucciones de Instalación";
+                document.getElementById("usage-title").textContent = "Uso";
+                document.getElementById("usage-text").textContent = "Para utilizar las funcionalidades del proyecto, escribe:";
+                document.getElementById("license-title").textContent = "Licencia";
+                document.getElementById("license-text").textContent = "El proyecto está bajo una licencia open-source.";
+                document.getElementById("changes-title").textContent = "Cambios Recientes";
+                document.getElementById("features-title").textContent = "Funciones Principales";
+                document.getElementById("updates-title").textContent = "Próximas Actualizaciones";
+                document.getElementById("footer-text").textContent = "© 2024 - JavaScript y TypeScript en Español. Proyecto Open Source.";
+                document.getElementById("language-button").textContent = "Changer en Français";
 
-            const currentLang = document.documentElement.lang;
-            const newLang = currentLang === 'en' ? 'es' : 'en';
-            document.documentElement.lang = newLang;
+                language = 'es';
+            } else if (language === 'es') {
+                // Switch to French
+                document.getElementById("header-title").textContent = "JavaScript et TypeScript en Français";
+                document.getElementById("installation-title").textContent = "Instructions d'installation";
+                document.getElementById("usage-title").textContent = "Utilisation";
+                document.getElementById("usage-text").textContent = "Pour utiliser les fonctionnalités du projet, écrivez :";
+                document.getElementById("license-title").textContent = "Licence";
+                document.getElementById("license-text").textContent = "Le projet est sous une licence open-source.";
+                document.getElementById("changes-title").textContent = "Modifications récentes";
+                document.getElementById("features-title").textContent = "Fonctionnalités principales";
+                document.getElementById("updates-title").textContent = "Mises à jour à venir";
+                document.getElementById("footer-text").textContent = "© 2024 - JavaScript et TypeScript en Français. Projet Open Source.";
+                document.getElementById("language-button").textContent = "切换到中文";
 
-            Object.keys(elementsToTranslate).forEach(selector => {
-                const element = document.querySelector(selector);
-                if (element) {
-                    if (typeof elementsToTranslate[selector] === 'object') {
-                        const subSelector = Object.keys(elementsToTranslate[selector])[0];
-                        const subElement = element.querySelector(subSelector);
-                        if (subElement) {
-                            subElement.textContent = elementsToTranslate[selector][newLang][subElement.textContent];
-                        }
-                    } else {
-                        element.textContent = elementsToTranslate[selector][newLang];
-                    }
-                }
-            });
+                language = 'fr';
+            } else if (language === 'fr') {
+                // Switch to Mandarin
+                document.getElementById("header-title").textContent = "JavaScript 和 TypeScript 在中文";
+                document.getElementById("installation-title").textContent = "安装说明";
+                document.getElementById("usage-title").textContent = "使用";
+                document.getElementById("usage-text").textContent = "要使用项目功能，请输入：";
+                document.getElementById("license-title").textContent = "许可证";
+                document.getElementById("license-text").textContent = "该项目采用开源许可证。";
+                document.getElementById("changes-title").textContent = "最近更改";
+                document.getElementById("features-title").textContent = "主要功能";
+                document.getElementById("updates-title").textContent = "即将更新";
+                document.getElementById("footer-text").textContent = "© 2024 - JavaScript 和 TypeScript 在中文. 开源项目.";
+                document.getElementById("language-button").textContent = "Switch to English";
+
+                language = 'zh';
+            } else {
+                // Switch back to English
+                document.getElementById("header-title").textContent = "JavaScript and TypeScript in English";
+                document.getElementById("installation-title").textContent = "Installation Instructions";
+                document.getElementById("usage-title").textContent = "Usage";
+                document.getElementById("usage-text").textContent = "To use the project's functionalities, write:";
+                document.getElementById("license-title").textContent = "License";
+                document.getElementById("license-text").textContent = "The project is under an open-source license.";
+                document.getElementById("changes-title").textContent = "Recent Changes";
+                document.getElementById("features-title").textContent = "Main Features";
+                document.getElementById("updates-title").textContent = "Upcoming Updates";
+                document.getElementById("footer-text").textContent = "© 2024 - JavaScript and TypeScript in English. Open Source Project.";
+                document.getElementById("language-button").textContent = "Switch to Spanish";
+
+                language = 'en';
+            }
         }
     </script>
 </body>
