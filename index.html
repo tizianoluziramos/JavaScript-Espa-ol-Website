@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript y TypeScript en Español</title>
+    <title>JavaScript and TypeScript in English</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -75,98 +75,142 @@
 
 <body>
     <header>
-        <h1>JavaScript y TypeScript en Español</h1>
+        <h1>JavaScript and TypeScript in English</h1>
+        <button onclick="switchLanguage()">Switch to Spanish</button>
     </header>
     <main>
         <section>
-            <h2>Instrucciones de Instalación</h2>
+            <h2>Installation Instructions</h2>
             <ul>
-                <li>Descomprime el archivo ZIP.</li>
-                <li>Coloca todo el contenido en la carpeta de tu proyecto.</li>
-                <li>Agrega la siguiente línea en tu código:</li>
+                <li>Unzip the ZIP file.</li>
+                <li>Place all content in your project folder.</li>
+                <li>Add the following line to your code:</li>
                 <ul>
-                    <li><b>TypeScript:</b> <code>import * as espanol from './importar.ts';</code></li>
-                    <li><b>JavaScript:</b> <code>import * as espanol from './importar.js';</code></li>
+                    <li><b>TypeScript:</b> <code>import * as english from './import.ts';</code></li>
+                    <li><b>JavaScript:</b> <code>import * as english from './import.js';</code></li>
                 </ul>
             </ul>
         </section>
         <section>
-            <h2>Uso</h2>
-            <p>Para utilizar las funcionalidades del proyecto, escribe:</p>
-            <code>espanol.*(el comando que quieres utilizar)</code>
+            <h2>Usage</h2>
+            <p>To use the project's functionalities, write:</p>
+            <code>english.*(the command you want to use)</code>
         </section>
         <section>
-            <h2>Licencia</h2>
-            <p>El proyecto está bajo una licencia open-source.</p>
+            <h2>License</h2>
+            <p>The project is under an open-source license.</p>
         </section>
         <section>
-            <h2>Cambios Recientes</h2>
+            <h2>Recent Changes</h2>
             <h3>[1.1.3-PreRelease]</h3>
             <ul>
-                <li>Se ha reconfigurado el código para ser compatible con JavaScript, añadiendo interfaces y tipos
-                    adecuados para las funciones.</li>
+                <li>The code has been reconfigured to be compatible with JavaScript, adding interfaces and appropriate types for the functions.</li>
             </ul>
             <h3>[1.1.2]</h3>
             <ul>
-                <li>Eliminado el <code>console.log</code> de la función <code>esAnagrama</code>, evitando que retorne
-                    <code>true</code> al iniciar el código.
-                </li>
-                <li>Se asegura el cierre de procesos con <code>process.exit()</code>.</li>
-                <li>Nuevas funcionalidades agregadas: creador de redes neuronales, desactivación de acceso a HTML y
-                    funciones API para obtener información sobre Franco Colapinto y Max Verstappen.</li>
-                <li>Agregada carpeta <b>F1</b> y eliminada carpeta <b>BSOD</b>.</li>
+                <li>Removed <code>console.log</code> from the <code>isAnagram</code> function, preventing it from returning <code>true</code> when the code starts.</li>
+                <li>Ensured process termination with <code>process.exit()</code>.</li>
+                <li>New functionalities added: neural network creator, disabling HTML access, and API functions for information about Franco Colapinto and Max Verstappen.</li>
+                <li>Added <b>F1</b> folder and removed <b>BSOD</b> folder.</li>
             </ul>
             <h3>[1.1.2-PreRelease-BugFix-Candidate]</h3>
             <ul>
-                <li>Eliminación de archivos innecesarios: <code>crearBot.ts</code> y pruebas en carpetas vacías.</li>
-                <li>Reintegración del archivo <code>Compile.cmd</code>.</li>
-                <li>Nuevas funciones como <code>crearServidor()</code> y descarga de archivos por ruta.</li>
-                <li>Se agregaron prerequisitos en <code>PreRequisites.cmd</code>.</li>
-                <li>Función para crear bots de Discord y Slack.</li>
+                <li>Removed unnecessary files: <code>createBot.ts</code> and tests in empty folders.</li>
+                <li>Reintegrated the <code>Compile.cmd</code> file.</li>
+                <li>New functions like <code>createServer()</code> and file download by path.</li>
+                <li>Prerequisites added in <code>PreRequisites.cmd</code>.</li>
+                <li>Function for creating Discord and Slack bots.</li>
             </ul>
             <h3>[1.1.0]</h3>
             <ul>
-                <li>Compilación de JavaScript para usar características de TypeScript.</li>
-                <li>Eliminación de la carpeta <b>Releases</b>.</li>
+                <li>JavaScript compilation to use TypeScript features.</li>
+                <li>Removed <b>Releases</b> folder.</li>
             </ul>
             <h3>[1.0.0]</h3>
             <ul>
-                <li>Múltiples importaciones de módulos como <code>readline-sync</code>, <code>axios</code>,
-                    <code>moment-es</code>, y más.
-                </li>
-                <li>Nuevas estructuras de control personalizadas: <code>si</code>, <code>mientras</code>,
-                    <code>caso</code>, entre otras.
-                </li>
-                <li>Funciones avanzadas: <code>esAnagrama</code>, <code>esPalindromo</code>,
-                    <code>validarTarjeta</code>, <code>factorial</code>, y más.
-                </li>
+                <li>Multiple module imports such as <code>readline-sync</code>, <code>axios</code>, <code>moment-es</code>, and more.</li>
+                <li>New custom control structures: <code>if</code>, <code>while</code>, <code>case</code>, among others.</li>
+                <li>Advanced functions: <code>isAnagram</code>, <code>isPalindrome</code>, <code>validateCard</code>, <code>factorial</code>, and more.</li>
             </ul>
         </section>
         <section>
-            <h2>Funciones Principales</h2>
+            <h2>Main Features</h2>
             <ul>
-                <li>Utilidades de arrays: <code>mapear</code>, <code>filtrar</code>, <code>invertirArray</code>, y más.
-                </li>
-                <li>Funciones de validación: <code>esAnagrama</code>, <code>esPalindromo</code>,
-                    <code>validarTarjeta</code>.
-                </li>
-                <li>Conexión a APIs: información sobre Franco Colapinto y Max Verstappen.</li>
-                <li>Creación de bots: Discord y Slack.</li>
-                <li>Funciones utilitarias: lectura de PDFs, conversión a binario, y más.</li>
+                <li>Array utilities: <code>map</code>, <code>filter</code>, <code>reverseArray</code>, and more.</li>
+                <li>Validation functions: <code>isAnagram</code>, <code>isPalindrome</code>, <code>validateCard</code>.</li>
+                <li>API connection: information about Franco Colapinto and Max Verstappen.</li>
+                <li>Bot creation: Discord and Slack.</li>
+                <li>Utility functions: reading PDFs, binary conversion, and more.</li>
             </ul>
         </section>
         <section>
-            <h2>Próximas Actualizaciones</h2>
+            <h2>Upcoming Updates</h2>
             <ul>
-                <li>Completar el archivo <code>autoFixCode.ts</code>.</li>
-                <li>Optimización de funciones existentes.</li>
-                <li>Integración de nuevos módulos y características.</li>
+                <li>Complete the <code>autoFixCode.ts</code> file.</li>
+                <li>Optimization of existing functions.</li>
+                <li>Integration of new modules and features.</li>
             </ul>
         </section>
     </main>
     <footer>
-        <p>© 2024 - JavaScript y TypeScript en Español. Proyecto Open Source.</p>
+        <p>© 2024 - JavaScript and TypeScript in English. Open Source Project.</p>
     </footer>
+
+    <script>
+        function switchLanguage() {
+            const elementsToTranslate = {
+                "header h1": {
+                    "en": "JavaScript and TypeScript in English",
+                    "es": "JavaScript y TypeScript en Español"
+                },
+                "main section h2": {
+                    "en": {
+                        "Installation Instructions": "Installation Instructions",
+                        "Usage": "Usage",
+                        "License": "License",
+                        "Recent Changes": "Recent Changes",
+                        "Main Features": "Main Features",
+                        "Upcoming Updates": "Upcoming Updates"
+                    },
+                    "es": {
+                        "Installation Instructions": "Instrucciones de Instalación",
+                        "Usage": "Uso",
+                        "License": "Licencia",
+                        "Recent Changes": "Cambios Recientes",
+                        "Main Features": "Funciones Principales",
+                        "Upcoming Updates": "Próximas Actualizaciones"
+                    }
+                },
+                "footer p": {
+                    "en": "© 2024 - JavaScript and TypeScript in English. Open Source Project.",
+                    "es": "© 2024 - JavaScript y TypeScript en Español. Proyecto Open Source."
+                },
+                "button": {
+                    "en": "Switch to Spanish",
+                    "es": "Cambiar a Español"
+                }
+            };
+
+            const currentLang = document.documentElement.lang;
+            const newLang = currentLang === 'en' ? 'es' : 'en';
+            document.documentElement.lang = newLang;
+
+            Object.keys(elementsToTranslate).forEach(selector => {
+                const element = document.querySelector(selector);
+                if (element) {
+                    if (typeof elementsToTranslate[selector] === 'object') {
+                        const subSelector = Object.keys(elementsToTranslate[selector])[0];
+                        const subElement = element.querySelector(subSelector);
+                        if (subElement) {
+                            subElement.textContent = elementsToTranslate[selector][newLang][subElement.textContent];
+                        }
+                    } else {
+                        element.textContent = elementsToTranslate[selector][newLang];
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
