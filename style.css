@@ -1,0 +1,138 @@
+    /* Reset y estilo base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+    }
+
+    /* Barra lateral */
+    nav {
+      background-color: #1e2a3a;
+      color: white;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      padding-top: 20px;
+      padding-left: 20px;
+    }
+
+    /* Título en la barra lateral */
+    nav .sidebar-title {
+      font-size: 1.6em;
+      color: #ffffff;
+      margin-bottom: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      display: block;
+      padding: 8px 0;
+    }
+
+    nav ul li a:hover {
+      background-color: #3178c6;
+      padding-left: 10px;
+      transition: all 0.3s;
+    }
+
+    /* Contenedor principal */
+    .content {
+      margin-left: 250px; /* Espacio para la barra lateral */
+      padding: 20px;
+      max-width: 1000px;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      background-color: #3178c6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+    }
+
+    h2 {
+      font-size: 2em;
+      color: #3178c6;
+      margin-bottom: 10px;
+    }
+
+    p, ul, ol {
+      font-size: 1.1em;
+    }
+
+    code {
+      background-color: #f4f4f4;
+      border-radius: 5px;
+      padding: 2px 8px;
+      font-family: monospace;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #3178c6;
+      color: white;
+    }
+
+    footer p {
+      font-size: 1em;
+    }
+
+    /* Estilos de FAQ */
+    #faq-content {
+      display: none;
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #f1f1f1;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #3178c6;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1em;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #275a8e;
+    }
+
+    a {
+      color: #3178c6;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
