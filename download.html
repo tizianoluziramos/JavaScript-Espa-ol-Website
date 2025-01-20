@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convertir archivo a Base64 y viceversa</title>
+</head>
+<body>
+
+  <h1>Selecciona un archivo para convertirlo a Base64 o un archivo .txt con Base64 para decodificar</h1>
+  
+  <!-- Input para seleccionar archivo -->
+  <input type="file" id="fileInput">
+  <br><br>
+  <!-- Input para seleccionar archivo Base64 -->
+  <input type="file" id="fileBase64Input">
+  
+  <br><br>
+
+  <!-- Espacio donde se mostrará el enlace generado -->
+  <a id="downloadLink" style="display: none;">Descargar archivo</a>
+
+  <script>
+    // Función para convertir archivo a Base64
+    function convertirADataURL(file, callback) {
+      const lector = new FileReader();
+      
+      lector.onloadend = function () {
+        const dataUrl = lector.result;
+        callback(dataUrl);  // Pasa el Data URL a la función de devolución de llamada
+      };
+      
+      lector.readAsDataURL(file);  // Convierte el archivo a Base64
+    }
+
+    // Función para guardar enlace en archivo txt
+    function guardarEnlaceEnTxt(url) {
+      const blob = new Blob([url], { type: 'text/plain' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'enlace.txt';  // Nombre del archivo que se descargará
+      link.click();
+    }
+
+    // Función para decodificar Base64 y convertirlo en archivo
+    function decodificarBase64(base64String, callback) {
+      const byteString = atob(base64String.split(',')[1]);
+      const ab = new ArrayBuffer(byteString.length);
+      const view = new Uint8Array(ab);
+      
+      for (let i = 0; i < byteString.length; i++) {
+        view[i] = byteString.charCodeAt(i);
+      }
+      
+      const blob = new Blob([ab]);
+      callback(blob);
+    }
+
+    // Función para manejar la carga del archivo .txt con Base64
+    document.getElementById('fileBase64Input').addEventListener('change', function(event) {
+      const archivoTxt = event.target.files[0];
+      if (archivoTxt) {
+        const lector = new FileReader();
+        
+        lector.onload = function () {
+          const base64String = lector.result.trim();
+          decodificarBase64(base64String, function(blob) {
+            const enlace = document.getElementById('downloadLink');
+            const url = URL.createObjectURL(blob);
+            enlace.href = url;
+            enlace.download = 'archivo_descargado';  // Nombre del archivo al descargar
+            enlace.style.display = 'inline';  // Muestra el enlace en la página
+            enlace.textContent = 'Descargar archivo decodificado';
+          });
+        };
+
+        lector.readAsText(archivoTxt);
+      }
+    });
+
+    // Selección de archivo y generación del enlace de descarga
+    document.getElementById('fileInput').addEventListener('change', function(event) {
+      const archivo = event.target.files[0];
+      if (archivo) {
+        // Verifica el tamaño del archivo (1 KB = 1024 bytes)
+        if (archivo.size > 1024) {
+          const enlace = document.getElementById('downloadLink');
+          convertirADataURL(archivo, function(dataUrl) {
+            // Crea el enlace para descargar el archivo en Base64
+            enlace.href = dataUrl;
+            enlace.download = archivo.name;  // Nombre del archivo al descargar
+            enlace.style.display = 'inline';  // Muestra el enlace en la página
+            enlace.textContent = `Descargar ${archivo.name}`;  // Actualiza el texto del enlace
+
+            // Guarda el enlace en un archivo txt
+            guardarEnlaceEnTxt(dataUrl);
+          });
+        } else {
+          alert('El archivo debe ser mayor a 1KB.');
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
